@@ -5,11 +5,17 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import NavigationBar from './components/NavigationBar.vue'
+import ContentHome from './components/ContentHome.vue'
+import ContentBlog from './components/ContentBlog.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    NavigationBar,
+    ContentHome,
+    ContentBlog,
   }
 }
 </script>
