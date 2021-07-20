@@ -1,32 +1,76 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div id="navigation"> <!-- Navigation -->
+      <navigation-bar 
+        v-if="!compactView"
+        v-model:current-tab="currentTab"
+        :tabs="tabs"/>
+    </div>
+    <div id="contents"> <!-- Contents -->
+      <component :is="currentTabComponent"/>
+    </div>
+    <div id="footer"> <!-- Web Footer -->
+      <web-footer/>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import NavigationBar from './components/NavigationBar.vue'
-import ContentHome from './components/ContentHome.vue'
-import ContentBlog from './components/ContentBlog.vue'
+import NavigationBar from '@/components/NavigationBar.vue'
+import ContentHome from '@/components/ContentHome.vue'
+import ContentBlog from '@/components/ContentBlog.vue'
+import ContentContact from '@/components/ContentContact.vue'
+import WebFooter from "@/components/WebFooter.vue";
 
 export default {
   name: 'App',
+  data() {
+    return {
+      currentTab: 'Home',
+      tabs: ['Home', 'Blog', 'Contact'],
+      compactView: false,
+      showNav: false,
+    }
+  },
+  computed: {
+    currentTabComponent() {
+      return 'content-' + this.currentTab.toLowerCase()
+    },
+  },
+  methods: {
+  },
   components: {
-    HelloWorld,
     NavigationBar,
     ContentHome,
     ContentBlog,
-  }
+    ContentContact,
+    WebFooter,
+  },
 }
 </script>
 
 <style>
+body {
+  margin: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#navigation {
+  margin: 0px 0px 20 0px;
+}
+
+#contents {
+  padding: 20px;
+}
+
+#footer {
+  padding: 20px;
 }
 </style>
