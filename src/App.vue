@@ -1,26 +1,25 @@
 <template>
   <div>
-    <div id="navigation"> <!-- Navigation -->
+    <div class="navigation"> <!-- Navigation -->
       <navigation-bar 
-        v-if="!compactView"
         v-model:current-tab="currentTab"
         :tabs="tabs"/>
     </div>
-    <div id="contents"> <!-- Contents -->
+    <div class="divider"> <!-- Contents -->
       <component :is="currentTabComponent"/>
     </div>
-    <div id="footer"> <!-- Web Footer -->
+    <div class="divider"> <!-- Web Footer -->
       <web-footer/>
     </div>
   </div>
 </template>
 
 <script>
-import NavigationBar from '@/components/NavigationBar.vue'
-import ContentHome from '@/components/ContentHome.vue'
-import ContentBlog from '@/components/ContentBlog.vue'
-import ContentContact from '@/components/ContentContact.vue'
-import WebFooter from "@/components/WebFooter.vue";
+import NavigationBar from '@/components/NavigationBar.vue';
+import ContentHome from '@/components/ContentHome.vue';
+import ContentBlog from '@/components/ContentBlog.vue';
+import ContentContact from '@/components/ContentContact.vue';
+import WebFooter from '@/components/WebFooter.vue';
 
 export default {
   name: 'App',
@@ -28,13 +27,11 @@ export default {
     return {
       currentTab: 'Home',
       tabs: ['Home', 'Blog', 'Contact'],
-      compactView: false,
-      showNav: false,
     }
   },
   computed: {
     currentTabComponent() {
-      return 'content-' + this.currentTab.toLowerCase()
+      return 'content-' + this.currentTab.toLowerCase();
     },
   },
   methods: {
@@ -62,15 +59,12 @@ body {
   color: #2c3e50;
 }
 
-#navigation {
-  margin: 0px 0px 20 0px;
+.navigation {
+  margin: 0em;
 }
 
-#contents {
-  padding: 20px;
-}
-
-#footer {
-  padding: 20px;
+.divider {
+  padding: 1em;
+  margin: 1em 0em;
 }
 </style>
