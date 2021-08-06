@@ -39,6 +39,7 @@ export default {
 
 .navbar-buttons {
   float: left;
+  font-size: 1em;
 }
 
 ul {
@@ -63,6 +64,7 @@ button {
   padding: 0.8em 1.0em;
   margin: 0.2em 0.1em;
   text-decoration: none;
+  transition: 0.2s ease-in;
 }
 
 .title {

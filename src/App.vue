@@ -1,16 +1,17 @@
 <template>
-  <div>
-    <div class="navigation"> <!-- Navigation -->
-      <navigation-bar 
-        v-model:current-tab="currentTab"
-        :tabs="tabs"/>
-    </div>
-    <div class="divider"> <!-- Contents -->
-      <component :is="currentTabComponent"/>
-    </div>
-    <div class="divider"> <!-- Web Footer -->
-      <web-footer/>
-    </div>
+  <div class="navigation"> <!-- Navigation -->
+    <navigation-bar 
+      v-model:current-tab="currentTab"
+      :tabs="tabs"/>
+  </div>
+  <div class="content"> <!-- Contents -->
+    <component
+      :is="currentTabComponent"/>
+  </div>
+  <div class="footer"> <!-- Web Footer -->
+    <web-footer
+      v-model:current-tab="currentTab"
+      :tabs="tabs"/>
   </div>
 </template>
 
@@ -34,8 +35,7 @@ export default {
       return 'content-' + this.currentTab.toLowerCase();
     },
   },
-  methods: {
-  },
+
   components: {
     NavigationBar,
     ContentHome,
@@ -47,24 +47,33 @@ export default {
 </script>
 
 <style>
-body {
-  margin: 0;
-}
-
 #app {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
   color: #2c3e50;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .navigation {
   margin: 0em;
 }
 
-.divider {
+.content {
   padding: 1em;
   margin: 1em 0em;
+  flex: 1 0 auto;
+  box-sizing: border-box;
+}
+
+.footer {
+  color: #ddd;
+  background-color: #444;
+  padding: 1em;
+  margin: 0em;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 </style>
