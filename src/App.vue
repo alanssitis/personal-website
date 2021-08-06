@@ -1,25 +1,20 @@
 <template>
   <div class="navigation"> <!-- Navigation -->
     <navigation-bar 
-      v-model:current-tab="currentTab"
-      :tabs="tabs"/>
+      @change-tab-clicked="changeCurrentTab"
+      :current-tab="currentTab"/>
   </div>
   <div class="content"> <!-- Contents -->
-    <component
-      :is="currentTabComponent"/>
+    <router-view/>
   </div>
   <div class="footer"> <!-- Web Footer -->
     <web-footer
-      v-model:current-tab="currentTab"
-      :tabs="tabs"/>
+      @change-tab-clicked="changeCurrentTab"/>
   </div>
 </template>
 
 <script>
 import NavigationBar from '@/components/NavigationBar.vue';
-import ContentHome from '@/components/ContentHome.vue';
-import ContentBlog from '@/components/ContentBlog.vue';
-import ContentContact from '@/components/ContentContact.vue';
 import WebFooter from '@/components/WebFooter.vue';
 
 export default {
@@ -27,7 +22,6 @@ export default {
   data() {
     return {
       currentTab: 'Home',
-      tabs: ['Home', 'Blog', 'Contact'],
     }
   },
   computed: {
@@ -35,12 +29,15 @@ export default {
       return 'content-' + this.currentTab.toLowerCase();
     },
   },
-
+  methods: {
+    changeCurrentTab(newTab) {
+      this.currentTab = newTab;
+      this.$router.push({name: newTab});
+      console.log(this.currentTab);
+    },
+  },
   components: {
     NavigationBar,
-    ContentHome,
-    ContentBlog,
-    ContentContact,
     WebFooter,
   },
 }

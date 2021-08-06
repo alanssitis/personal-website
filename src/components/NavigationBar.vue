@@ -2,31 +2,34 @@
   <div class="container">
     <div class="navbar-buttons">
       <ul>
-        <li 
-          :key="tab.id"
-          v-for="tab in tabs">
-          <button 
-            class="navigation"
-            :class="{ active: (currentTab === tab) }" 
-            @click="$emit('update:currentTab', tab)"
-            >{{ tab }}</button>
-        </li>
+        <li><button 
+          class="navigation"
+          :class="{ active: (currentTab === 'Home') }" 
+          @click="$emit('changeTabClicked', 'Home')"
+          >{{ 'Home' }}</button></li>
+        <li><button 
+          class="navigation"
+          :class="{ active: (currentTab === 'Blog') }" 
+          @click="$emit('changeTabClicked', 'Blog')"
+          >{{ 'Blog' }}</button></li>
+        <li><button 
+          class="navigation"
+          :class="{ active: (currentTab === 'Contact') }" 
+          @click="$emit('changeTabClicked', 'Contact')"
+          >{{ 'Contact' }}</button></li>
       </ul>
     </div>
     <button 
       class="title"
-      @click="$emit('update:currentTab', 'Home')"
+      @click="$emit('changeTabClicked', 'Home')"
       >Alan Chung</button>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    currentTab: String,
-    tabs: Array,
-  },
-  emits: ['update:currentTab'],
+  props: {currentTab: String},
+  emits: ['changeTabClicked'],
 }
 </script>
 

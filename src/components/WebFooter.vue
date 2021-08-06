@@ -5,14 +5,18 @@
     </div>
     <div class="links">
       <ul class="link">
-        <li
-          :key="tab.id"
-          v-for="tab in tabs">
-          <button
-            class="navigation"
-            @click="$emit('update:currentTab', tab)"
-            >{{ tab }}</button>
-        </li>
+        <li><button
+          class="navigation"
+          @click="$emit('changeTabClicked', 'Home')"
+          >{{ 'Home' }}</button></li>
+        <li><button
+          class="navigation"
+          @click="$emit('changeTabClicked', 'Blog')"
+          >{{ 'Blog' }}</button></li>
+        <li><button
+          class="navigation"
+          @click="$emit('changeTabClicked', 'Contact')"
+          >{{ 'Contact' }}</button></li>
       </ul>
     </div>
     <div class="socials">
@@ -23,11 +27,7 @@
 
 <script>
 export default {
-  props: {
-    currentTab: String,
-    tabs: Array,
-  },
-  emits: ['update:currentTab'],
+  emits: ['changeTabClicked'],
 }
 </script>
 
