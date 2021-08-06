@@ -33,7 +33,6 @@ export default {
     changeCurrentTab(newTab) {
       this.currentTab = newTab;
       this.$router.push({name: newTab});
-      console.log(this.currentTab);
     },
   },
   components: {
