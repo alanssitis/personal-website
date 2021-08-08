@@ -2,27 +2,41 @@
   <div class="container">
     <div class="navbar-buttons">
       <ul>
-        <li><button 
-          class="navigation"
-          :class="{ active: (currentTab === 'Home') }" 
-          @click="$emit('changeTabClicked', 'Home')"
-          >{{ 'Home' }}</button></li>
-        <li><button 
-          class="navigation"
-          :class="{ active: (currentTab === 'Blog') }" 
-          @click="$emit('changeTabClicked', 'Blog')"
-          >{{ 'Blog' }}</button></li>
-        <li><button 
-          class="navigation"
-          :class="{ active: (currentTab === 'Contact') }" 
-          @click="$emit('changeTabClicked', 'Contact')"
-          >{{ 'Contact' }}</button></li>
+        <li>
+          <button 
+            class="navigation"
+            :class="{ active: (currentTab === 'Home') }" 
+            @click="$emit('changeTabClicked', 'Home')"
+          >
+            {{ 'Home' }}
+          </button>
+        </li>
+        <li>
+          <button 
+            class="navigation"
+            :class="{ active: (currentTab === 'Blog') }" 
+            @click="$emit('changeTabClicked', 'Blog')"
+          >
+            {{ 'Blog' }}
+          </button>
+        </li>
+        <li>
+          <button 
+            class="navigation"
+            :class="{ active: (currentTab === 'Contact') }" 
+            @click="$emit('changeTabClicked', 'Contact')"
+          >
+            {{ 'Contact' }}
+          </button>
+        </li>
       </ul>
     </div>
     <button 
       class="title"
       @click="$emit('changeTabClicked', 'Home')"
-      >Alan Chung</button>
+    >
+      Alan Chung
+    </button>
   </div>
 </template>
 

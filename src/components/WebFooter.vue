@@ -5,18 +5,30 @@
     </div>
     <div class="links">
       <ul class="link">
-        <li><button
-          class="navigation"
-          @click="$emit('changeTabClicked', 'Home')"
-          >{{ 'Home' }}</button></li>
-        <li><button
-          class="navigation"
-          @click="$emit('changeTabClicked', 'Blog')"
-          >{{ 'Blog' }}</button></li>
-        <li><button
-          class="navigation"
-          @click="$emit('changeTabClicked', 'Contact')"
-          >{{ 'Contact' }}</button></li>
+        <li>
+          <button
+            class="navigation"
+            @click="$emit('changeTabClicked', 'Home')"
+          >
+            {{ 'Home' }}
+          </button>
+        </li>
+        <li>
+          <button
+            class="navigation"
+            @click="$emit('changeTabClicked', 'Blog')"
+          >
+            {{ 'Blog' }}
+          </button>
+        </li>
+        <li>
+          <button
+            class="navigation"
+            @click="$emit('changeTabClicked', 'Contact')"
+          >
+            {{ 'Contact' }}
+          </button>
+        </li>
       </ul>
     </div>
     <div class="socials">

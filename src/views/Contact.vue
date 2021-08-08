@@ -2,15 +2,24 @@
   <div class="form-wrapper">
     <div>
       <label for="name">Name</label>
-      <input type="text" placeholder="First Last">
+      <input
+        type="text"
+        placeholder="First Last"
+      >
     </div>
     <div>
       <label for="email">Email</label>
-      <input type="text" placeholder="my@email.com">
+      <input
+        type="text"
+        placeholder="my@email.com"
+      >
     </div>
     <div>
       <label for="subject">Subject</label>
-      <input type="text" placeholder="What is this about?">
+      <input
+        type="text"
+        placeholder="What is this about?"
+      >
     </div>
     <div>
       <label for="message">Message</label>

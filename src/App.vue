@@ -1,15 +1,20 @@
 <template>
-  <div class="navigation"> <!-- Navigation -->
+  <div class="navigation">
+    <!-- Navigation -->
     <navigation-bar 
+      :current-tab="currentTab"
       @change-tab-clicked="changeCurrentTab"
-      :current-tab="currentTab"/>
+    />
   </div>
-  <div class="content"> <!-- Contents -->
-    <router-view/>
+  <div class="content">
+    <!-- Contents -->
+    <router-view />
   </div>
-  <div class="footer"> <!-- Web Footer -->
+  <div class="footer">
+    <!-- Web Footer -->
     <web-footer
-      @change-tab-clicked="changeCurrentTab"/>
+      @change-tab-clicked="changeCurrentTab"
+    />
   </div>
 </template>
 
@@ -19,6 +24,10 @@ import WebFooter from '@/components/WebFooter.vue';
 
 export default {
   name: 'App',
+  components: {
+    NavigationBar,
+    WebFooter,
+  },
   data() {
     return {
       currentTab: 'Home',
@@ -29,10 +38,6 @@ export default {
       this.currentTab = newTab;
       this.$router.push({name: newTab});
     },
-  },
-  components: {
-    NavigationBar,
-    WebFooter,
   },
 }
 </script>
