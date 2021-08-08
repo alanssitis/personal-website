@@ -24,11 +24,6 @@ export default {
       currentTab: 'Home',
     }
   },
-  computed: {
-    currentTabComponent() {
-      return 'content-' + this.currentTab.toLowerCase();
-    },
-  },
   methods: {
     changeCurrentTab(newTab) {
       this.currentTab = newTab;
