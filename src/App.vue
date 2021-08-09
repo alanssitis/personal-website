@@ -1,20 +1,22 @@
 <template>
-  <div class="navigation">
-    <!-- Navigation -->
-    <navigation-bar 
-      :current-tab="currentTab"
-      @change-tab-clicked="changeCurrentTab"
-    />
-  </div>
-  <div class="content">
-    <!-- Contents -->
-    <router-view />
-  </div>
-  <div class="footer">
-    <!-- Web Footer -->
-    <web-footer
-      @change-tab-clicked="changeCurrentTab"
-    />
+  <div class="wrapper">
+    <div class="navigation">
+      <!-- Navigation -->
+      <navigation-bar 
+        :current-tab="currentTab"
+        @change-tab-clicked="changeCurrentTab"
+      />
+    </div>
+    <div class="content">
+      <!-- Contents -->
+      <router-view />
+    </div>
+    <div class="footer">
+      <!-- Web Footer -->
+      <web-footer
+        @change-tab-clicked="changeCurrentTab"
+      />
+    </div>
   </div>
 </template>
 
@@ -47,6 +49,12 @@ export default {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  font-size: 1.2em;
+}
+
+.wrapper {
+  height: 100%;
   color: #2c3e50;
   min-height: 100%;
   display: flex;
@@ -70,6 +78,6 @@ export default {
   padding: 1em;
   margin: 0em;
   box-sizing: border-box;
-  flex-shrink: 0;
+  flex: 0 1 auto;
 }
 </style>

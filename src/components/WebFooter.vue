@@ -45,6 +45,7 @@ export default {
 
 <style scoped>
 .wrapper {
+  color: #ddd;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;

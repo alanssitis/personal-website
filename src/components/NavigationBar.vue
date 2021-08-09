@@ -42,7 +42,13 @@
 
 <script>
 export default {
-  props: {currentTab: String},
+  props: {
+    currentTab: { 
+      type: String,
+      required: false,
+      default: ''
+    },
+  },
   emits: ['changeTabClicked'],
 }
 </script>
