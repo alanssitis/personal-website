@@ -1,15 +1,21 @@
 <template>
-  <div class="navigation"> <!-- Navigation -->
-    <navigation-bar 
-      @change-tab-clicked="changeCurrentTab"
-      :current-tab="currentTab"/>
-  </div>
-  <div class="content"> <!-- Contents -->
-    <router-view/>
-  </div>
-  <div class="footer"> <!-- Web Footer -->
-    <web-footer
-      @change-tab-clicked="changeCurrentTab"/>
+  <div class="wrapper">
+    <div class="navigation">
+      <!-- Navigation -->
+      <navigation-bar 
+        @change-tab-clicked="changeCurrentTab"
+      />
+    </div>
+    <div class="content">
+      <!-- Contents -->
+      <router-view />
+    </div>
+    <div class="footer">
+      <!-- Web Footer -->
+      <web-footer
+        @change-tab-clicked="changeCurrentTab"
+      />
+    </div>
   </div>
 </template>
 
@@ -19,20 +25,14 @@ import WebFooter from '@/components/WebFooter.vue';
 
 export default {
   name: 'App',
-  data() {
-    return {
-      currentTab: 'Home',
-    }
-  },
-  methods: {
-    changeCurrentTab(newTab) {
-      this.currentTab = newTab;
-      this.$router.push({name: newTab});
-    },
-  },
   components: {
     NavigationBar,
     WebFooter,
+  },
+  methods: {
+    changeCurrentTab(newTab) {
+      this.$router.push({name: newTab});
+    },
   },
 }
 </script>
@@ -42,6 +42,12 @@ export default {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  font-size: 1.2em;
+}
+
+.wrapper {
+  height: 100%;
   color: #2c3e50;
   min-height: 100%;
   display: flex;
@@ -62,9 +68,9 @@ export default {
 .footer {
   color: #ddd;
   background-color: #444;
-  padding: 1em;
+  padding: 2em 1em;
   margin: 0em;
   box-sizing: border-box;
-  flex-shrink: 0;
+  flex: 0 1 auto;
 }
 </style>

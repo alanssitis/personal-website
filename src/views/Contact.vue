@@ -1,37 +1,57 @@
 <template>
-  <div class="form-wrapper">
-    <div>
-      <label for="name">Name</label>
-      <input type="text" placeholder="First Last">
+  <div class="wrapper">
+    <div class="message-wrapper">
+      <h1>Let's Talk!</h1>
     </div>
-    <div>
-      <label for="email">Email</label>
-      <input type="text" placeholder="my@email.com">
-    </div>
-    <div>
-      <label for="subject">Subject</label>
-      <input type="text" placeholder="What is this about?">
-    </div>
-    <div>
-      <label for="message">Message</label>
-      <input type="text">
+    <div class="form-wrapper">
+      <div class="small-input">
+        <label
+          class="label"
+          for="name"
+        >Name</label>
+        <input
+          type="text"
+          placeholder="Your Name"
+        >
+      </div>
+      <div class="small-input">
+        <label
+          class="label"
+          for="email"
+        >Email</label>
+        <input
+          type="email"
+          placeholder="Your Email"
+        >
+      </div>
+      <div class="small-input">
+        <label
+          class="label"
+          for="subject"
+        >Subject</label>
+        <input type="text">
+      </div>
+      <div class="large-input">
+        <label
+          class="label"
+          for="textarea"
+        >Message</label>
+        <textarea
+          class="message"
+          name="textarea"
+          placeholder="..."
+          required=""
+        />
+      </div>
+      <div class="small-input">
+        <input
+          type="submit"
+          value="Send"
+        >
+      </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  setup() {
-    
-  },
-}
-</script>
-
-<style scoped>
-.form-wrapper {
-  height: 100%;
-  padding: 1em;
-  border: 1px solid #333;
-  border-radius: 0.4em;
-}
-</style>
+<script src="./scripts/contact.js"></script>
+<style src="./static/contact.css" scoped></style>
