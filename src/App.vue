@@ -3,7 +3,6 @@
     <div class="navigation">
       <!-- Navigation -->
       <navigation-bar 
-        :current-tab="currentTab"
         @change-tab-clicked="changeCurrentTab"
       />
     </div>
@@ -30,14 +29,8 @@ export default {
     NavigationBar,
     WebFooter,
   },
-  data() {
-    return {
-      currentTab: 'Home',
-    }
-  },
   methods: {
     changeCurrentTab(newTab) {
-      this.currentTab = newTab;
       this.$router.push({name: newTab});
     },
   },
@@ -75,7 +68,7 @@ export default {
 .footer {
   color: #ddd;
   background-color: #444;
-  padding: 1em;
+  padding: 2em 1em;
   margin: 0em;
   box-sizing: border-box;
   flex: 0 1 auto;

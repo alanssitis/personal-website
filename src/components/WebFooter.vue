@@ -1,8 +1,5 @@
 <template>
   <div class="wrapper">
-    <div class="profile">
-      <p>Profile</p>
-    </div>
     <div class="links">
       <ul class="link">
         <li>
@@ -10,26 +7,42 @@
             class="navigation"
             @click="$emit('changeTabClicked', 'Home')"
           >
-            {{ 'Home' }}
+            Home
           </button>
         </li>
+        <div class="horizontal-line" />
+        <li>
+          <button
+            class="navigation"
+            @click="$emit('changeTabClicked', 'Projects')"
+          >
+            Projects
+          </button>
+        </li>
+        <div class="horizontal-line" />
         <li>
           <button
             class="navigation"
             @click="$emit('changeTabClicked', 'Blog')"
           >
-            {{ 'Blog' }}
-          </button>
-        </li>
-        <li>
-          <button
-            class="navigation"
-            @click="$emit('changeTabClicked', 'Contact')"
-          >
-            {{ 'Contact' }}
+            Blog
           </button>
         </li>
       </ul>
+    </div>
+    <div class="profile">
+      <p class="contact1">
+        Like what you see?
+      </p>
+      <p class="contact2">
+        Feel free to say hi!
+      </p>
+      <button
+        class="contact"
+        @click="$emit('changeTabClicked', 'Contact')"
+      >
+        Contact
+      </button>
     </div>
     <div class="socials">
       <p>Socials</p>
@@ -48,15 +61,22 @@ export default {
   color: #ddd;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
-}
-
-.profile {
-  grid-column: 1;
+  gap: 2em;
 }
 
 .links {
-  grid-column: 2;
+  grid-column: 1;
+  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.horizontal-line {
+  margin: 0.2em;
+  display: block;
+  height: 0.08em;
+  background-color: #888;
 }
 
 ul.link {
@@ -65,28 +85,57 @@ ul.link {
   padding: 0;
 }
 
-li {
-  margin: 2px;
-}
-
-button.navigation {
+button {
   text-align: left;
   font-size: 1em;
   border: none;
   border-radius: 0.4em;
   color: #ddd;
   background-color: #444;
-  height: 100%;
   width: 100%;
   padding: 0.3em 0.6em;
   transition: 0.2s ease-in;
+}
+
+button.navigation {
+  height: 100%;
 }
 
 button.navigation:hover {
   background-color: #333;
 }
 
+.profile {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+button.contact {
+  height: 1.8em;
+  align-self: flex-end;
+  flex-shrink: 1;
+}
+
+button.contact:hover {
+  background-color: #333;
+}
+
 .socials {
   grid-column: 3;
+}
+
+p.contact1 {
+  font-size: 1.2em;
+  margin: 0.2em;
+  padding: 0.2em;
+  flex-grow: 1;
+}
+
+p.contact2 {
+  font-size: 1em;
+  margin: 0em 0.2em;
+  padding: 0.3em;
+  flex-shrink: 1;
 }
 </style>

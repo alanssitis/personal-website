@@ -1,14 +1,21 @@
 <template>
   <div class="container">
+    <button 
+      class="title"
+      :class="{ active: (currentTab === 'Home') }" 
+      @click="$emit('changeTabClicked', 'Home')"
+    >
+      Alan Chung
+    </button>
     <div class="navbar-buttons">
       <ul>
         <li>
           <button 
             class="navigation"
-            :class="{ active: (currentTab === 'Home') }" 
-            @click="$emit('changeTabClicked', 'Home')"
+            :class="{ active: (currentTab === 'Projects') }" 
+            @click="$emit('changeTabClicked', 'Projects')"
           >
-            {{ 'Home' }}
+            Projects
           </button>
         </li>
         <li>
@@ -17,7 +24,7 @@
             :class="{ active: (currentTab === 'Blog') }" 
             @click="$emit('changeTabClicked', 'Blog')"
           >
-            {{ 'Blog' }}
+            Blog
           </button>
         </li>
         <li>
@@ -26,30 +33,21 @@
             :class="{ active: (currentTab === 'Contact') }" 
             @click="$emit('changeTabClicked', 'Contact')"
           >
-            {{ 'Contact' }}
+            Contact
           </button>
         </li>
       </ul>
     </div>
-    <button 
-      class="title"
-      @click="$emit('changeTabClicked', 'Home')"
-    >
-      Alan Chung
-    </button>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    currentTab: { 
-      type: String,
-      required: false,
-      default: ''
-    },
-  },
-  emits: ['changeTabClicked'],
+  computed: {
+    currentTab() {
+      return this.$route.name;
+    }
+  }
 }
 </script>
 
@@ -58,11 +56,12 @@ export default {
   width: 100%;
   overflow: hidden;
   background-color: #333;
+  padding: 0.5em 2em;
+  box-sizing: border-box;
 }
 
 .navbar-buttons {
-  float: left;
-  font-size: 1em;
+  float: right;
 }
 
 ul {
@@ -83,6 +82,7 @@ button {
   border-radius: 0.4em;
   color: #fff;
   background-color: #333;
+  font-size: 0.8em;
   text-align: center;
   padding: 0.8em 1.0em;
   margin: 0.2em 0.1em;
@@ -91,7 +91,6 @@ button {
 }
 
 .title {
-  float: right;
   width: 8em;
 }
 
