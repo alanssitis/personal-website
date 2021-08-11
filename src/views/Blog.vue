@@ -2,10 +2,5 @@
   <p>Blog</p>
 </template>
 
-<script>
-export default {
-  setup() {
-    
-  },
-}
-</script>
+<script src="./scripts/blog.js"></script>
+<style src="./static/blog.css" scoped></style>

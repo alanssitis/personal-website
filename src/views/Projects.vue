@@ -2,10 +2,5 @@
   <p>Projects</p>
 </template>
 
-<script>
-export default {
-  setup() {
-    
-  },
-}
-</script>
+<script src="./scripts/projects.js"></script>
+<style src="./static/projects.css" scoped></style>
