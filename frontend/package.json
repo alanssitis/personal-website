@@ -1,10 +1,16 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "description": "Personal website front end",
-  "author": "alanssitis",
-  "license": "ISC",
   "private": false,
+  "description": "Personal website front end",
+  "author": {
+    "name": "alanssitis"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
@@ -27,20 +33,20 @@
     },
     "extends": [
       "plugin:vue/recommended",
-      "eslint:recommended"
+      "eslint:recommended",
+      "plugin:vue/vue3-essential"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
-    }
+    },
+    "rules": {}
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
   ],
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  }
+  "_id": "frontend@0.1.0",
+  "license": "ISC",
+  "readme": "ERROR: No README data found!"
 }
