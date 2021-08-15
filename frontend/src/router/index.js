@@ -2,6 +2,7 @@ import Home from "@/views/Home.vue";
 import Projects from "@/views/Projects.vue";
 import Blog from "@/views/Blog.vue";
 import Contact from "@/views/Contact.vue";
+import Admin from "@/views/Admin.vue";
 import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     name: "Contact",
     component: Contact,
   },
+  {
+    path: "/admin",
+    name: "Admin",
+    component: Admin,
+  }
 ]
 
 const router = createRouter({
