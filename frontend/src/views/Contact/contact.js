@@ -8,12 +8,11 @@ export default {
         email: "",
         subject: "",
         message: ""
-      }
+      },
+      showIncomplete: false,
     }
   },
   computed: {
-    canSubmit() {
-    },
     missingFields() {
       let value = [];
       if (!this.formFields.name) {value.push("name")}
@@ -21,22 +20,36 @@ export default {
       if (!this.formFields.message) {value.push("message")}
       return value;
     },
+    canSubmit() {
+      if (this.missingFields.length > 0) {return false}
+      return true;
+    },
     missingFieldsMessage() {
       let message = "You still need to fill the following:"
-      for (let message of this.missingFields()) {
-        message += " " + message;
+      for (let field of this.missingFields) {
+        message = message.concat(" " + field);
       }
       return message;
     }
   },
   methods: {
+    mustFill(label) {
+      if (this.showIncomplete && this.missingFields.includes(label)) {
+        return true;
+      }
+      return false;
+    },
     submitForm() {
-      console.log(this.formFields);
-      this.formFields.name = "";
-      this.formFields.email = "";
-      this.formFields.subject = "";
-      this.formFields.message = "";
-      // contactService.submit(this.formFields);
+      if (this.canSubmit) {
+        // contactService.submit(this.formFields);
+        this.showIncomplete = false;
+        this.formFields.name = "";
+        this.formFields.email = "";
+        this.formFields.subject = "";
+        this.formFields.message = "";
+      } else {
+        this.showIncomplete = true;
+      }
     },
   }
 }

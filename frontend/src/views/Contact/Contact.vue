@@ -11,6 +11,7 @@
         >Name</label>
         <input
           v-model="formFields.name"
+          :class="{ highlight: mustFill('name') }"
           type="text"
           placeholder="Your Name"
         >
@@ -22,6 +23,7 @@
         >Email</label>
         <input
           v-model="formFields.email"
+          :class="{ highlight: mustFill('email') }"
           type="email"
           placeholder="Your Email"
         >
@@ -43,6 +45,7 @@
         >Message</label>
         <textarea
           v-model="formFields.message"
+          :class="{ highlight: mustFill('message') }"
           class="message"
           name="textarea"
           placeholder="..."
@@ -52,8 +55,6 @@
       <div class="small-input">
         <button
           class="submit"
-          :disabled="canSubmit == 1"
-          :class="{ canSubmit: (canSubmit != 0) }"
           @click="submitForm()"
         >
           Send
