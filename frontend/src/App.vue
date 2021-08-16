@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import NavigationBar from '@/components/NavigationBar.vue';
-import WebFooter from '@/components/WebFooter.vue';
+import NavigationBar from '@/components/NavigationBar/NavigationBar.vue';
+import WebFooter from '@/components/WebFooter/WebFooter.vue';
 
 export default {
   name: 'App',

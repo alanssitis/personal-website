@@ -41,5 +41,5 @@
   </div>
 </template>
 
-<script src="./scripts/navigationbar.js"></script>
-<style src="./static/navigationbar.css" scoped></style>
+<script src="./navigationbar.js"></script>
+<style src="./navigationbar.css" scoped></style>

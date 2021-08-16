@@ -1,8 +1,8 @@
-import Home from "@/views/Home.vue";
-import Projects from "@/views/Projects.vue";
-import Blog from "@/views/Blog.vue";
-import Contact from "@/views/Contact.vue";
-import Admin from "@/views/Admin.vue";
+import Home from "@/views/Home/Home.vue";
+import Projects from "@/views/Projects/Projects.vue";
+import Blog from "@/views/Blog/Blog.vue";
+import Contact from "@/views/Contact/Contact.vue";
+import Admin from "@/views/Admin/Admin.vue";
 import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [

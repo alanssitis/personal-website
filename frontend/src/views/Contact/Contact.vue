@@ -53,5 +53,5 @@
   </div>
 </template>
 
-<script src="./scripts/contact.js"></script>
-<style src="./static/contact.css" scoped></style>
+<script src="./contact.js"></script>
+<style src="./contact.css" scoped></style>

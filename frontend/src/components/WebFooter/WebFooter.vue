@@ -50,4 +50,4 @@
   </div>
 </template>
 
-<style src="./static/webfooter.css" scoped></style>
+<style src="./webfooter.css" scoped></style>

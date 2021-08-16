@@ -3,19 +3,11 @@ import http from "./http-common"
 const base = "http://localhost:3000/api/contact"
 class contactService {
   getAll() {
-    http.get(base)
-      .then(value => {
-        console.log(value.data);
-        return value.data;
-      }) 
+    return http.get(base)
   }
 
   get(id) {
-    http.get(base + id)
-      .then(value => {
-        console.log(value);
-        return value;
-      })
+    return http.get(base + id)
   }
 
   submit(data) {
