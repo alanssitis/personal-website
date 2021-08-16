@@ -24,13 +24,6 @@ export default {
       if (this.missingFields.length > 0) {return false}
       return true;
     },
-    missingFieldsMessage() {
-      let message = "You still need to fill the following:"
-      for (let field of this.missingFields) {
-        message = message.concat(" " + field);
-      }
-      return message;
-    }
   },
   methods: {
     mustFill(label) {
