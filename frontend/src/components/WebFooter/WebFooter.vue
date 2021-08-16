@@ -1,5 +1,8 @@
 <template>
   <div class="wrapper">
+    <div class="top">
+      <p>hello</p>
+    </div>
     <div class="links">
       <ul class="link">
         <li>

@@ -56,13 +56,14 @@ export default {
 
 .navigation {
   margin: 0em;
+  flex: 0 1 auto;
 }
 
 .content {
   padding: 1em;
   margin: 1em 0em;
-  flex: 1 0 auto;
   box-sizing: border-box;
+  flex: 1 0 auto;
 }
 
 .footer {

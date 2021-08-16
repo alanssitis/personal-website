@@ -10,6 +10,7 @@
           for="name"
         >Name</label>
         <input
+          v-model="formFields.name"
           type="text"
           placeholder="Your Name"
         >
@@ -20,6 +21,7 @@
           for="email"
         >Email</label>
         <input
+          v-model="formFields.email"
           type="email"
           placeholder="Your Email"
         >
@@ -29,7 +31,10 @@
           class="label"
           for="subject"
         >Subject</label>
-        <input type="text">
+        <input 
+          v-model="formFields.subject"
+          type="text"
+        >
       </div>
       <div class="large-input">
         <label
@@ -37,6 +42,7 @@
           for="textarea"
         >Message</label>
         <textarea
+          v-model="formFields.message"
           class="message"
           name="textarea"
           placeholder="..."
@@ -44,10 +50,14 @@
         />
       </div>
       <div class="small-input">
-        <input
-          type="submit"
-          value="Send"
+        <button
+          class="submit"
+          :disabled="canSubmit == 1"
+          :class="{ canSubmit: (canSubmit != 0) }"
+          @click="submitForm()"
         >
+          Send
+        </button>
       </div>
     </div>
   </div>

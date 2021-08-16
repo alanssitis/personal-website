@@ -1,12 +1,18 @@
 .wrapper {
   color: #ddd;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid: repeat(2, auto-flow) / repeat(3, 1fr);
   gap: 2em;
+}
+
+.top {
+  grid-column: 1 / 4;
+  grid-row: 1;
 }
 
 .links {
   grid-column: 1;
+  grid-row: 2;
   display: grid;
   display: flex;
   flex-direction: column;
@@ -48,6 +54,7 @@ button.navigation:hover {
 
 .profile {
   grid-column: 2;
+  grid-row: 2;
   display: flex;
   flex-direction: column;
 }
@@ -64,6 +71,7 @@ button.contact:hover {
 
 .socials {
   grid-column: 3;
+  grid-row: 2;
 }
 
 p.contact1 {
