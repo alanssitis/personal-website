@@ -14,10 +14,17 @@ export default {
   },
   computed: {
     missingFields() {
-      let value = [];
-      if (!this.formFields.name) {value.push("name")}
-      if (!this.formFields.email) {value.push("email")}
-      if (!this.formFields.message) {value.push("message")}
+      const value = [];
+      if (!this.isValidText(this.formFields.name)) {
+        value.push("name");
+      }
+      if (!this.isValidEmail(this.formFields.email)) {
+        value.push("email");
+      }
+      if (!this.isValidText(this.formFields.message)) {
+        value.push("message");
+      }
+      console.log(value);
       return value;
     },
     canSubmit() {
@@ -27,10 +34,7 @@ export default {
   },
   methods: {
     mustFill(label) {
-      if (this.showIncomplete && this.missingFields.includes(label)) {
-        return true;
-      }
-      return false;
+      return this.showIncomplete && this.missingFields.includes(label);
     },
     submitForm() {
       if (this.canSubmit) {
@@ -44,5 +48,12 @@ export default {
         this.showIncomplete = true;
       }
     },
+    isValidEmail(string) {
+      const re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+      return re.test(string);
+    },
+    isValidText(string) {
+      return string;
+    }
   }
 }
