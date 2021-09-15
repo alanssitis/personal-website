@@ -16,7 +16,7 @@
   padding: 1em 1.5em;
   margin: 0em 1em;
   box-shadow: 0px 0px 10px #999;
-  border-radius: 0.6em;
+  border-radius: 0.4em;
   width: 20em;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@ input[type="text"],
 input[type="email"],
 textarea {
   margin: 0.2em 0em;
-  border-radius: 0.6em;
+  border-radius: 0.4em;
   border: 2px solid #eee;
   background-color: #eee;
   box-sizing: border-box;
@@ -64,22 +64,43 @@ textarea {
   font-size: 0.8em;
 }
 
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+  border-color: #888;
+}
+
 input[type="text"]:focus,
 input[type="email"]:focus,
-textarea:focus {
+textarea:focus,
+.submit:focus-visible {
   outline: none;
-  box-shadow: 0 0 5px #444;
+  box-shadow: 0 0 7px #222;
 }
 
 .submit {
-  border-radius: 0.6em;
+  border: none;
+  border-radius: 0.4em;
+  background-color: #666;
+  color: #eee;
   font-size: 0.8em;
   width: 40%;
+  height: 1.8em;
+  font-size: 1em;
+}
+.submit:hover {
+  box-shadow: 0 0 7px #222;
+}
+.submit:active {
+  background-color: #777;
 }
 
 .highlight {
   border-color: red !important;
 }
+.highlight:hover {
+  border-color: yellow !important;
+}
 .highlight:focus {
-  box-shadow: 0 0 5px red !important;
+  box-shadow: 0 0 7px red !important;
 }

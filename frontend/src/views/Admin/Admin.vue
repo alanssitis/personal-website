@@ -1,17 +1,22 @@
 <template>
   <div>
-    <ul>
-      <li
-        v-for="submission in contactSubmissions"
-        :key="submission.id"
-      >
-        <p>{{ submission.id }}</p>
-        <p>{{ submission.name }}</p>
-        <p>{{ submission.email }}</p>
-        <p>{{ submission.subject }}</p>
-        <p>{{ submission.message }}</p>
-      </li>
-    </ul>
+    <div class="contactgallery">
+      <h2>Contacts</h2>
+      <hr>
+      <ul class="contacts">
+        <li
+          v-for="submission in contactSubmissions"
+          :key="submission.id"
+          class="contact"
+        >
+          <p>ID: {{ submission.id }}</p>
+          <p>Name: {{ submission.name }}</p>
+          <p>Email: {{ submission.email }}</p>
+          <p>Subject: {{ submission.subject }}</p>
+          <p>Message: {{ submission.message }}</p>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 

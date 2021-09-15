@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="top">
-      <p>hello</p>
+      <p>All problems are a question of effort.</p>
     </div>
     <div class="links">
       <ul class="link">

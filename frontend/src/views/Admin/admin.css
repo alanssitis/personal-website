@@ -1,0 +1,12 @@
+ul.contacts {
+    margin: 1em;
+    padding: 0;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    gap: 1.2em;
+}
+
+li.contact {
+    background-color: #eee;
+}

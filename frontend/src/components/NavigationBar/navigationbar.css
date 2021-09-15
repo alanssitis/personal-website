@@ -40,15 +40,12 @@ button {
   width: 8em;
 }
 
-button.title:hover {
-  background-color: #444;
-}
 
 .navigation {
   width: 6em;
 }
 
-button.navigation:hover {
+button:hover {
   background-color: #111;
 }
 

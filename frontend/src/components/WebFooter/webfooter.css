@@ -8,6 +8,12 @@
 .top {
   grid-column: 1 / 4;
   grid-row: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.top>p {
+  margin: 0;
 }
 
 .links {
